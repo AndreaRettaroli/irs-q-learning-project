@@ -30,21 +30,35 @@ jobs:
               gcc --version
               g++ --version
       
+      - name: Checkout
+        uses: actions/checkout@v3
+
+
+      - name: Experiment
+        run: |
+          pwd             # /home/runner/work/try/try
+          mkdir public
+          cd public
+          pwd  
+
+      - name: check download of argos3         
+        run:  ls  
+
       - name: donwload argos3
         uses: suisei-cn/actions-download-file@v1.3.0
         id: downloadfile  # Remember to give an ID if you need the output filename
         with:
-          url: "https://drive.google.com/u/0/uc?id=1oO2lb2LuLq4IrZmNMiJurWTotHp_pDye&export=download&confirm=t&uuid=765c3a2c-9b95-47b0-9f62-2f614eba47c8&at=AHV7M3c7OYhDwKDBog2PiTvYw5Kz:1668440077169"
-          target: ./
-          
+           url: "https://drive.google.com/u/0/uc?id=1oO2lb2LuLq4IrZmNMiJurWTotHp_pDye&export=download&confirm=t&uuid=765c3a2c-9b95-47b0-9f62-2f614eba47c8&at=AHV7M3c7OYhDwKDBog2PiTvYw5Kz:1668440077169"
+           target: ./
+
       - name: check download of argos3         
         run:  ls   
-          
+
       - name: install argos3         
         run:  sudo apt install -y ./argos3_simulator-3.0.0-x86_64-beta59.deb
-              
+
       - name: verify installation
         run: argos3 --v
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      #- uses: actions/checkout@v3
