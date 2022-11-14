@@ -36,8 +36,9 @@ jobs:
 
       - name: Experiment
         run: |
-          pwd                    
-          cd public
+          pwd 
+          ls                  
+          cd argos3
           ls
           pwd 
           sudo apt install -y ./argos3_simulator-3.0.0-x86_64-beta59.deb
