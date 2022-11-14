@@ -63,7 +63,7 @@ jobs:
       #   run:  sudo apt install -y ./home/runner/work/irs-q-learning-project/irs-q-learning-project/public/argos3_simulator-3.0.0-x86_64-beta59.deb
 
       - name: verify installation
-        run: argos3 --v
+        run: argos3 --version
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       #- uses: actions/checkout@v3
