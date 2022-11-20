@@ -10,7 +10,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  config-env:
+  run-simulator:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
 
@@ -41,4 +41,8 @@ jobs:
       - name: verify installation
         run: argos3 --version
       
+      - name: run simulator
+        run: argos3 -c ./circuit-testing.argos
+  
+  
 
