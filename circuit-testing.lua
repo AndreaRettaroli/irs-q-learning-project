@@ -126,8 +126,9 @@ function competence1()
   local subsumption = true
   
   total_state_acquisition = total_state_acquisition + 1
-
-  if state == number_of_states then -- erntirely on white part, move random se lo stato è nero 1== 256 non entra
+-- entirely on white part, move random  if the state is equal to 256
+-- if there is at least one sensor in black area it skip this condition
+  if state == number_of_states then 
     subsumption = false
     on_white_circuit_acquisition = on_white_circuit_acquisition + 1
   end
