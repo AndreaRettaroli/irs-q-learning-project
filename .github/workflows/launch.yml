@@ -42,10 +42,12 @@ jobs:
           sudo apt install -y ./argos3_simulator-3.0.0-x86_64-beta59.deb
 
       - name: verify installation
-        run: argos3 --version
+        run: | 
+              argos3 --version
+              cd ..
       
-      - name: run simulator
-        run: argos3 -c ./circuit-testing.argos
+      - name: run test 
+        run: ./test-script.sh -a ./circuit-testing.argos -s test-results.txt -e 100
   
   
 
