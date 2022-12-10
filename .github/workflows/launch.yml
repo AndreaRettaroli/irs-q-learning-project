@@ -45,6 +45,9 @@ jobs:
         run: | 
               argos3 --version
               cd ..
+              
+      - name: add permissions
+        run: chmod -R 777 ./
       
       - name: run test 
         run: ./test-script.sh -a ./circuit-testing.argos -s test-results.txt -e 100
